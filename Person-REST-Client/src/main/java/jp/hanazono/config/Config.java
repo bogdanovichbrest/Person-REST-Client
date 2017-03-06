@@ -1,6 +1,5 @@
 package jp.hanazono.config;
 
-import org.apache.taglibs.standard.tlv.JstlBaseTLV;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
