@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 
 import jp.hanazono.domain.Person;
@@ -43,7 +42,6 @@ public class ClientController {
 
 	@RequestMapping("/save")
 	public String savePerson(HttpServletRequest request, ModelMap modelMap) {
-		System.out.println(request.getMethod());
 		Person person = new Person();
 		if (request.getParameter("id") != "") {
 			person.setId(Integer.parseInt(request.getParameter("id")));
@@ -61,13 +59,7 @@ public class ClientController {
 
 	@RequestMapping("/delete")
 	public String deletePerson(HttpServletRequest request) {
-		Person person = new Person();
-		person.setId(Integer.parseInt(request.getParameter("id")));
-		person.setFirstname(request.getParameter("firstname"));
-		person.setLastname(request.getParameter("lastname"));
-		person.setAge(Integer.parseInt(request.getParameter("age")));
-		System.out.println(person.getId());
-		template.delete("http://localhost:8080/Person-REST-Service/", person, Person.class);
+				template.delete("http://localhost:8080/Person-REST-Service/"+request.getParameter("id"));//, person, Person.class);
 		return "redirect:/";
 
 	}
