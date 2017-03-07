@@ -19,7 +19,7 @@
 			</th>
 		</TR>
 			<tr>
-			<form action="save?id=${person.id}&firstname=${person.firstname}&lastname=${person.lastname}&age=${person.age}" method="${method}">
+			<form action="save" method="${method}">
 				<TD><input name="id" type="text" value="${person.id}" readonly="readonly"></TD>
 				<TD><input name="firstname" type="text" value="${person.firstname}"></TD>
 				<TD><input name="lastname" type="text" value="${person.lastname}"></TD>

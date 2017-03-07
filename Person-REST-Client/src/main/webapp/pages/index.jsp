@@ -29,7 +29,7 @@
 				<td>
 					<div>
 						<a href="edit?id=${person.id}&firstname=${person.firstname}&lastname=${person.lastname}&age=${person.age}"><img alt="edit" src="pages/images/edit_icon_15.png" border="0"></a>
-						<a href="delete?id=${person.id}"><img alt="delete"
+						<a href="delete?id=${person.id}&firstname=${person.firstname}&lastname=${person.lastname}&age=${person.age}"><img alt="delete"
 							src="pages/images/delete_icon_15.png" border="0"> </a>
 					</div>
 				</td>
